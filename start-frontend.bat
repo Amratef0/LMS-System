@@ -1,0 +1,6 @@
+@echo off
+echo Installing dependencies...
+cd frontend\lms-frontend
+npm install
+echo Starting LMS Frontend...
+ng serve --open

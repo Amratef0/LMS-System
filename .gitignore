@@ -1,0 +1,23 @@
+# .NET
+backend/**/bin/
+backend/**/obj/
+backend/**/*.user
+backend/**/.vs/
+
+# Angular
+frontend/lms-frontend/node_modules/
+frontend/lms-frontend/dist/
+frontend/lms-frontend/.angular/
+
+# General
+*.DS_Store
+*.env
+
+# Uploaded files at runtime
+backend/LMS.API/Uploads/*
+!backend/LMS.API/Uploads/.gitkeep
+# .NET
+backend/**/*.suo
+
+# System files
+Thumbs.db
