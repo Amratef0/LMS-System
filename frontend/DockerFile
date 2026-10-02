@@ -1,0 +1,18 @@
+FROM node:20-alpine AS build
+WORKDIR /app
+ENV NG_CLI_ANALYTICS=false
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build -- --configuration production
+
+# Works for both Angular output layouts (dist/<name> or dist/<name>/browser)
+RUN set -e; \
+    d=$(ls -d dist/*/ | head -1); \
+    mkdir /out; \
+    if [ -d "${d}browser" ]; then cp -r "${d}browser/." /out; else cp -r "${d}." /out; fi
+
+FROM nginx:1.27-alpine
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /out /usr/share/nginx/html
+EXPOSE 80
