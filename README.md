@@ -107,7 +107,7 @@ docker pull ghcr.io/amratef0/lms-system-web:latest
 
 A **Flutter** mobile app is also available for LMS Pro. It uses the same REST API as the web application, so accounts, roles, and data are shared across web and mobile.
 
-👉 Repository: [LMS Mobile App (Flutter)](https://github.com/Amratef0/YOUR-FLUTTER-REPO)
+ Repository: [LMS Mobile App (Flutter)](https://github.com/Amratef0/YOUR-FLUTTER-REPO)
 
 **Connecting the mobile app to the local API**
 
